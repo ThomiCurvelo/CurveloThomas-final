@@ -1,0 +1,11 @@
+{% extends "template_base.html" %}
+
+<title>Agregar Tarea</title>
+
+{% block contenido %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ formulario.as_p }}
+        <button type="submit">Guardar tarea</button>
+    </form>
+{% endblock contenido %}

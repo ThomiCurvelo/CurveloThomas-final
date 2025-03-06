@@ -1,0 +1,12 @@
+{% extends "template_base.html" %}
+
+<title>Borrar Tarea</title>
+
+{% block contenido %}
+Borrar {{tarea}}
+    <form action="{% url "borrar_tarea" tarea.pk %}" method="POST">
+        {% csrf_token %}
+        <p>Eliminar tarea</p>
+        <button type="submit">Confirmar</button>
+    </form>
+{% endblock contenido %}

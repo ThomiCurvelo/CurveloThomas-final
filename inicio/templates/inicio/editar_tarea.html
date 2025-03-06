@@ -1,0 +1,12 @@
+{% extends "template_base.html" %}
+
+<title>Editar Tarea</title>
+
+{% block contenido %}
+Formulario de edision 
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <button type="submit">Guardar tarea</button>
+    </form>
+{% endblock contenido %}

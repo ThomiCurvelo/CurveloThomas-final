@@ -1,0 +1,25 @@
+{% extends "inicio/inicio.html" %}
+
+{% block tittle_head %}Listado Tareas{% endblock tittle_head %}
+{% block contenido %}
+<form action="">
+    {{ formulario }}
+    <input type="submit" value="Buscar">
+</form>
+
+{% if titulo %}
+    <ul>
+        {% for tarea in titulo %}
+        <li>
+            <p>{{tarea.titulo}}-{{tarea.descripcion}} 
+                <a href="{% url "detalle_tarea" tarea.id %}">Ver mas</a>
+                <a href="{% url "borrar_tarea" tarea.id %}">Borrar</a>
+                <a href="{% url "editar_tarea" tarea.id %}">Editar</a>
+            </p>
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+No hay tareas guardadas.
+{% endif %}
+{% endblock contenido %}
